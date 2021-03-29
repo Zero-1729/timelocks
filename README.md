@@ -4,6 +4,8 @@ Bitcoin allows the ability to have it's transactions encumbered by explicit abso
 
 > Note: `nSequence` was originally envisioned to be used for ordering unconfirmed transactions in the mempool, however, it was given a new lease on life in [BIP 68](https://github.com/bitcoin/bips/blob/master/bip-0068.mediawiki) to supplement it's existing use case(s) to include timelocks.
 
+![NLockTime vs NSequence](./nlocktime-vs-nsequence.png)
+
 For more granular control over a transaction's outputs, [BIP 65](https://github.com/bitcoin/bips/blob/master/bip-0065.mediawiki) and [BIP 112](https://github.com/bitcoin/bips/blob/master/bip-0112.mediawiki) were introduced to allow embedding the timelock in a transaction's script, these script operator codes are `OP_CheckLockTimeVerify` (`OP_CLTV`) and `OP_CheckSequenceVerify` (`OP_CSV`) respectively. Both allow individual transaction outputs and not entire transactions to be restricted by either an absolute or relative timelock or both. They force the `nLockTime` or `nSequence` values in a transaction spending `OP_CLTV` and or `OP_CSV` locked outputs to be set to a value greater than or equal to the timelock of their operator arguments.
 
 The key difference between `OP_CLTV` and `OP_CSV` has been nicely summed up by [Nicolas Dorier on Reddit](https://www.reddit.com/r/Bitcoin/comments/5i1ax7/nsequencenlocktime_vs_checksequenceverify_vs/db4vo9j/?context=3):
