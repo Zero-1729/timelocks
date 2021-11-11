@@ -2,7 +2,7 @@
 
 Bitcoin allows the ability to have it's transactions encumbered by explicit absolute or relative timelocks, through transaction-level or script-level locks by specifying either block heights or timestamps. These locks control the validity of an entire transaction or a specific transaction input. The transaction-level locks are determined by the values in the locktime field (`nLockTime`) of a transaction and the sequence field of each input in a transaction (`nSequence`). This functionality is in addition to their existing uses to help prevent [*fee sniping*](https://github.com/bitcoin/bitcoin/pull/2340) for example in the case of `nLockTime`, and signaling [opt-in RBF](https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki) or ignoring the `nLocktime` in the case of `nSequence`.
 
-> Note: `nSequence` was originally envisioned to be used for ordering unconfirmed transactions in the mempool, however, it was given a new lease on life in [BIP 68](https://github.com/bitcoin/bips/blob/master/bip-0068.mediawiki) to supplement it's existing use case(s) to include timelocks.
+> Note: `nSequence` was originally envisioned to be used for ordering unconfirmed transactions in the mempool, however, it was given a new lease on life in [BIP 68](https://github.com/bitcoin/bips/blob/master/bip-0068.mediawiki) to supplement its existing use case(s) to include timelocks.
 
 ![NLockTime vs NSequence](./nlocktime-vs-nsequence.png)
 
